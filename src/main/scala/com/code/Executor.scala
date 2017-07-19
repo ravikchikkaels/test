@@ -4,47 +4,51 @@
 
 package com.code
 
-class Product(val name : String,val price : Double)
+import Domain.{Inventory, ShoppingCart}
 
-class CartProduct(override val name : String,override val price : Double,val Index : Int ) extends Product(name, price)
+//val productsByName = cart.getAllProducts().groupBy(x => x.product.name)
 
-
-object Inventory{
-  val lstProducts = List(new Product("apple", 0.6), new Product("orange", 0.25) )
-}
-
-
-class ShoppingCart{
-  private var lstProducts = List[CartProduct]()
-
-  def AddProduct(p : CartProduct): Unit ={
-    lstProducts = p :: lstProducts
-  }
-
-  def getAllProducts() : List[CartProduct] = {
-    lstProducts
-  }
-}
-class checkout
-{
-  def getCheckoutTotal(cart : ShoppingCart):Double = {
-    cart.getAllProducts().foldLeft(0.0)(_ + _.price)
-  }
-}
+    //val x = CurrentOffers.getOfferByProduct(test)
+    /*cart.getAllProducts().foldLeft(0.0)((t, c) =>{
+      t + c.product.price
+    })
 
 
+
+
+
+
+
+    //(_ + _.product.price)
+
+*/
 
 object Executor {
   def main(args: Array[String]): Unit = {
 
+    val x = "a#b#c"
+    val y = x.split("#", 2)
 
-    // println("hello world!")
-  /*  val lst = List(user("r1", 1), user("r2", 2), user("r3", 3))
-    val names = for( u <- lst) yield u.name
+    var itemIndexer : Int = 0
+    val cart = new ShoppingCart()
 
+    val apple : Domain.Product = Inventory.lstProducts.filter(x => x.name.equals("apple")).head
+    val orange : Domain.Product = Inventory.lstProducts.filter(x => x.name.equals("orange")).head
+    val test : Domain.Product = Inventory.lstProducts.filter(x => x.name.equals("test")).head
 
-    for(i <- names) println(i)*/
+    itemIndexer = itemIndexer + 1
+    cart.AddProduct(apple)
+    cart.AddProduct(apple)
+    cart.AddProduct(orange)
+    cart.AddProduct(orange)
+    cart.AddProduct(orange)
+    cart.AddProduct(orange)
+    cart.AddProduct(apple)
+    cart.AddProduct(test)
+
+    cart.getAllProducts().foreach(x => println(x.offerType))
+
+  //  println(Checkout.getCheckoutTotal(cart))
 
   }
-
 }
