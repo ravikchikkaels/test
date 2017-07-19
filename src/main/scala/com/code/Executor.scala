@@ -4,7 +4,7 @@
 
 package com.code
 
-import Domain.{Inventory, ShoppingCart}
+import Domain.{Checkout, Inventory, ShoppingCart}
 
 //val productsByName = cart.getAllProducts().groupBy(x => x.product.name)
 
@@ -26,8 +26,7 @@ import Domain.{Inventory, ShoppingCart}
 object Executor {
   def main(args: Array[String]): Unit = {
 
-    val x = "a#b#c"
-    val y = x.split("#", 2)
+
 
     var itemIndexer : Int = 0
     val cart = new ShoppingCart()
@@ -37,18 +36,28 @@ object Executor {
     val test : Domain.Product = Inventory.lstProducts.filter(x => x.name.equals("test")).head
 
     itemIndexer = itemIndexer + 1
+
     cart.AddProduct(apple)
     cart.AddProduct(apple)
-    cart.AddProduct(orange)
-    cart.AddProduct(orange)
-    cart.AddProduct(orange)
-    cart.AddProduct(orange)
     cart.AddProduct(apple)
+    cart.AddProduct(apple)
+    cart.AddProduct(apple)
+
+/*
+
+    cart.AddProduct(orange)
+    cart.AddProduct(orange)
+    cart.AddProduct(orange)
+    cart.AddProduct(orange)
+    cart.AddProduct(orange)
+    cart.AddProduct(orange)
+    cart.AddProduct(orange)
+*/
     cart.AddProduct(test)
 
-    cart.getAllProducts().foreach(x => println(x.offerType))
 
-  //  println(Checkout.getCheckoutTotal(cart))
+
+    println(Checkout.getCheckoutTotal(cart))
 
   }
 }
