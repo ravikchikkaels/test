@@ -37,23 +37,23 @@ object Executor {
 
     itemIndexer = itemIndexer + 1
 
+   /* cart.AddProduct(apple)
     cart.AddProduct(apple)
     cart.AddProduct(apple)
     cart.AddProduct(apple)
     cart.AddProduct(apple)
-    cart.AddProduct(apple)
+    cart.AddProduct(apple)*/
 
-/*
 
     cart.AddProduct(orange)
     cart.AddProduct(orange)
     cart.AddProduct(orange)
     cart.AddProduct(orange)
+   /* cart.AddProduct(orange)
     cart.AddProduct(orange)
-    cart.AddProduct(orange)
-    cart.AddProduct(orange)
-*/
-    cart.AddProduct(test)
+    cart.AddProduct(orange)*/
+
+   // cart.AddProduct(test)
 
 
 
