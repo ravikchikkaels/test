@@ -11,16 +11,17 @@ abstract class OfferMain
 {
   val product : Product
   val offertype : OfferType
-  def getPrice(cart:List[CartProduct]) : Double
+  def getPrice(cproduct:CartProduct, count: Int) : Double
 }
 
 class Offer1(val p : Product) extends OfferMain
 {
   override val product: Product = p
   override val offertype: OfferType = OfferType.BuyOneGetOneFree
-  override def getPrice(iterator: List[CartProduct]): Double = {
-    val productPrice = iterator.head.product.price
-    (iterator.length / 2) * productPrice +  (iterator.length % 2) * productPrice
+  //override def getPrice(iterator: List[CartProduct]): Double = {
+  override def getPrice(cproduct:CartProduct, count: Int): Double = {
+    val productPrice = cproduct.product.price
+    (count / 2) * productPrice +  (count % 2) * productPrice
   }
 }
 
@@ -29,10 +30,10 @@ class Offer2(val p : Product) extends OfferMain
 {
   override val product: Product = p
   override val offertype: OfferType = OfferType.ThreeForTwo
-  override def getPrice(iterator: List[CartProduct]): Double = {
-    val productPrice = iterator.head.product.price
+  override def getPrice(cproduct:CartProduct, count: Int): Double = {
+    val productPrice = cproduct.product.price
     val teoProductsPrice = productPrice * 2
-    (iterator.length / 3) * teoProductsPrice +  (iterator.length % 3) * productPrice
+    (count / 3) * teoProductsPrice +  (count % 3) * productPrice
   }
 }
 
@@ -41,8 +42,8 @@ class NoOffer(val p : Product) extends OfferMain
 {
   override val product: Product = p
   override val offertype: OfferType = OfferType.None
-  override def getPrice(iterator: List[CartProduct]): Double = {
-    iterator.foldLeft(0.0)(_ + _.product.price)
+  override def getPrice(cproduct:CartProduct, count: Int): Double = {
+    cproduct.product.price * count
   }
 }
 

@@ -26,14 +26,12 @@ import Domain.{Checkout, Inventory, ShoppingCart}
 object Executor {
   def main(args: Array[String]): Unit = {
 
-
-
     var itemIndexer : Int = 0
     val cart = new ShoppingCart()
 
     val apple : Domain.Product = Inventory.lstProducts.filter(x => x.name.equals("apple")).head
     val orange : Domain.Product = Inventory.lstProducts.filter(x => x.name.equals("orange")).head
-    val test : Domain.Product = Inventory.lstProducts.filter(x => x.name.equals("test")).head
+    //val test : Domain.Product = Inventory.lstProducts.filter(x => x.name.equals("test")).head
 
     itemIndexer = itemIndexer + 1
 
