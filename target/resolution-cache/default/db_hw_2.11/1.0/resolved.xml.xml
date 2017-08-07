@@ -4,7 +4,7 @@
 		module="db_hw_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20170718224248"
+		publication="20170726170137"
 	>
 		<description>
 		DB_HW
@@ -35,5 +35,12 @@
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.8" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.11.8" conf="scala-tool->default,optional(default);compile->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.11" rev="3.0.3" conf="test->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-core_2.11" rev="2.1.1" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe" name="config" rev="1.3.0" conf="compile->default(compile)"/>
+		<dependency org="org.apache.hadoop" name="hadoop-client" rev="2.6.0" conf="compile->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-mllib_2.10" rev="1.3.0" conf="provided->default(compile)"/>
+		<dependency org="org.scalanlp" name="breeze_2.11" rev="0.13.1" conf="compile->default(compile)"/>
+		<dependency org="org.scalanlp" name="breeze-natives_2.11" rev="0.13.1" conf="compile->default(compile)"/>
+		<dependency org="org.scalanlp" name="breeze-viz_2.11" rev="0.13.1" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

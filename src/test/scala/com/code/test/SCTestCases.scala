@@ -30,4 +30,9 @@ class SCTestCases extends FlatSpec {
         assert(!testContext.testProducts.filter(x => x.name.equals("orange")).isEmpty)
     }
 
+    "test" should "pass if buy one get one free offer applied on orange" in {
+        assert(!testContext.testProducts.filter(x => x.name.equals("apple")).isEmpty)
+        assert(!testContext.testProducts.filter(x => x.name.equals("orange")).isEmpty)
+    }
+
 }
